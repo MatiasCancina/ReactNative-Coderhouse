@@ -1,20 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ProductList } from "./components/ProductsList";
+import { ColorsList } from "./components/ColorsList";
+import HairlineWidth from "./ui/HairlineWidth";
+import ToDoList from "./components/ToDoList";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ScrollView style={styles.container}>
+      <Text
+        style={{
+          marginTop: 40,
+          fontSize: 40,
+          fontWeight: "bold",
+          textAlign: "center",
+        }}
+      >
+        Learning Proyects
+      </Text>
+
+      <View
+        style={{
+          borderColor: "#ff0000",
+          borderWidth: StyleSheet.hairlineWidth,
+          marginTop: 10,
+          marginBottom: 50,
+        }}
+      />
+
+      <ColorsList />
+
+      <HairlineWidth />
+
+      <ProductList />
+
+      <HairlineWidth />
+
+      <ToDoList/>
+
+      <HairlineWidth />
+
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingHorizontal: 10,
   },
 });
